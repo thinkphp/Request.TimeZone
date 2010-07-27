@@ -22,12 +22,12 @@ Request.TimeZone Method: constructor {#Request.TimeZone: constructor}
 
 ### Arguments:
 
-1. location - (*String*) the location for which you wish to display timezone.
-2. options  - (*object*) An object containing the Request.TimeZone instance's options.
-3. o        - (*object*) An object containing the key 'badge' with boolean value at choice:
-                           (*true*) : to receive as response an HTML DIV Element with timezone data 
+1. location - (*String*) (required) the location for which you wish to display timezone.
+2. options  - (*object*) (required) An object containing the Request.TimeZone instance's options.
+3. o        - (*object*) (optional) An object containing the key 'badge' with boolean value at choice:
+                                   (*true*) : to receive as response an HTML DIV Element with timezone data 
                                       and a map at location you defined.
-                           (*false*): if you want more control over response then set 'false' and 
+                                   (*false*): if you want more control over response then set 'false' and 
                                       you will receive an JSON object with timezone data.
                                       
 
