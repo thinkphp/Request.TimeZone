@@ -1,6 +1,6 @@
-Request.ForecastWeather
+Request.TimeZone
 =======================
-This is a simple plugin that display you the local timezone with JSONP&YQL-driven badge.
+This is a simple plugin that shows you the local TimeZone with JSONP&YQL-driven badge.
 
 ![Screenshot](http://farm5.static.flickr.com/4129/4833588733_3ed15f79eb_z.jpg)
 
