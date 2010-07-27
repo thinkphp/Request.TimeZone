@@ -25,8 +25,10 @@ Request.TimeZone Method: constructor {#Request.TimeZone: constructor}
 1. location - (*String*) the location for which you wish to display timezone.
 2. options  - (*object*) An object containing the Request.TimeZone instance's options.
 3. o        - (*object*) An object containing the key 'badge' with boolean value at choice:
-                            - (*true*) : if you want to display as a badge (location + map)  
-                            - (*false*): if you want more control over response object.
+                           (*true*) : if you set this boolean value you will reveive as response 
+                                       an DIV element with location data and a map.  
+                           (*false*): if you want more control over response object 
+                                      the response is an object with its location.
 
 ### options:
 
@@ -75,7 +77,7 @@ a Request.TimeZone instance
 #### Arguments
      1. data - (*Object*) data returns are passed.
 
-## Element Method: loadWeather
+## Element Method: loadTimeZone
 
 Updates the content of the Element with the desired timezone.
 

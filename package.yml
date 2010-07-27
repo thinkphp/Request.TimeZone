@@ -3,5 +3,5 @@ author: thinkphp
 current: v1.0 
 category: request
 tags: [jsonp,jsonp-x,request,interface,timezone,time,date,location]
-docs:  
+docs: http://github.com/thinkphp/Request.TimeZone/blob/master/Docs/Request.TimeZone.md 
 demo: http://thinkphp.ro/apps/js-hacks/timezone/mootools/demo7.html 
