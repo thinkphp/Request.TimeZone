@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<table xmlns="http://query.yahooapis.com/v1/schema/table.xsd">
+  <meta>
+    <sampleQuery>select * from {table} where place="bucharest,ro"</sampleQuery>
+    <author>Adrian Statescu</author>
+    <description></description>
+  </meta>
+  <bindings>
+    <select>
+       <inputs>
+          <key id="place" type="xs:string" paramType="variable" required="true" />
+          <key id="badge" type="xs:string" paramType="variable" required="false" />
+       </inputs>
+       <execute><![CDATA[
+           default xml namespace = "http://where.yahooapis.com/v1/schema.rng";
+           var res = y.query("select * from geo.places(1) where text='"+ place +"'").results;
+           var lat = res.place.centroid.latitude, lng = res.place.centroid.longitude; 
+           default xml namespace = "";
+
+           var tz = y.query("select * from xml where url='http://ws.geonames.org/timezone?lat="+lat+"&lng="+lng+"'").results;
+
+           if(badge === 'true') {
+
+             if(/^\-?[0-9|.]+$/.test(lat) && /^\-?[0-9|.]+$/.test(lng)) {
+
+                var src = "http://maps.google.com/maps/api/staticmap?center="+lat+","+lng+"&zoom=5"+
+                          "&markers="+lat+","+lng+"&size=450x200&sensor=false&"+
+                          "key=ABQIAAAAHFKkG2s1GKwMWvhsxH6UGhTsE91L0UkYXwp_YlL0uSAPtCVs5hTWKxoV6BCF8F8RGtpqa4IYPMkbcQ";
+
+                var out = <ul>
+                           <li>Timezone: {tz.geonames.timezone.timezoneId.text()}</li>
+                           <li>Country: {tz.geonames.timezone.countryName.text()}</li>
+                           <li>Sunset: {tz.geonames.timezone.sunset.text()}</li>
+                           <li>Sunrise: {tz.geonames.timezone.sunrise.text()}</li>
+                           <li>Latitude: {tz.geonames.timezone.lat.text()}</li>
+                           <li>Longitude: {tz.geonames.timezone.lng.text()}</li>
+                           <li>Time: {tz.geonames.timezone.time.text()}</li>
+                         </ul>;   
+
+                var img = <img/>;
+                    img.@src = src;
+                    img.@alt = place; 
+
+                response.object = <div class="tz">{out}{img}</div>;
+
+             } else {
+
+                response.object = <div class="error">Not Timezone found for location: {place}</div>;
+             }
+
+           } else {
+
+             response.object = <response>{tz.geonames.timezone}</response>;
+           }
+           
+       ]]></execute>
+    </select>
+  </bindings>
+
+</table>

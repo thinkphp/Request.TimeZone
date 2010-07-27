@@ -1,0 +1,39 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+   <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+   <title>new Request.TimeZone(location,options,{badge:true}).send()</title>
+   <style type="text/css">
+   html,body{font-family: georgia,helvetica,arial,sans-serif,georgia;}
+   h1{ font-size:400%; margin:0; padding-bottom:10px; color:#393;}
+   h1 span{color: #111}
+   #ft{font-size:80%;color:#888;text-align:left;margin:2em 0;font-size: 12px}
+   #ft p a{color:#93C37D;}
+   </style>
+   <script src="http://www.google.com/jsapi?key=ABQIAAAA1XbMiDxx_BTCY2_FkPh06RRaGTYH6UMl8mADNa0YKuWNNa8VNxQEerTAUcfkyrr6OwBovxn7TDAH5Q"></script>
+   <script type="text/javascript">google.load("mootools", "1.2.4");</script>
+   <script type="text/javascript" src="http://github.com/thinkphp/Request.ForecastWeather/raw/master/demo/Request.JSONP.js"></script>
+   <script type="text/javascript" src="Request.TimeZone-yui-compressed.js"></script>
+   <script type="text/javascript">
+       window.addEvent('domready',function(){
+                 new Request.TimeZone('sydney',{
+                                       onSuccess: function(o){
+                                             if(window.console) {console.log(o);} 
+                                             $('badge').set('html',o.results[0]);                                             
+                                       },
+                                       onRequest: function(script){           
+                                             if(window.console) {console.log(script);} 
+                                             $('badge').set('text','Loading...'); 
+                                       }   
+                },{badge: true}).send(); 
+       });
+   </script>
+</head>
+<body>
+<div id="hd" role="banner"><h1>Request.<span>T</span>ime<span>Z</span>one</h1></div>
+<span>Sytax: new Request.TimeZone(location,options,{badge:true}).send()</span>
+<div id="badge"></div>
+<div id="ft"><p>Created by @<a href="http://twitter.com/thinkphp">thinkphp</a> using <a href="">Open Data Table</a> | You can grab the source code of this demo on <a href="http://mootools.net/forge/download/Request.TimeZone/v1.0">Forge</a></p></div></div>
+</body>
+</html>
+

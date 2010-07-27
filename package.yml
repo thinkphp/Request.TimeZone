@@ -1,7 +1,7 @@
-name:  Request.TimeZone
-author:  Adrian Statescu
-current:  
-category:  
-tags:  []
+name: Request.TimeZone
+author: thinkphp
+current: v1.0 
+category: request
+tags: [jsonp,jsonp-x,request,interface,timezone,time,date,location]
 docs:  
 demo:  

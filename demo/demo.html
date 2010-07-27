@@ -1,0 +1,72 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+   <title>Request.TimeZone</title>
+   <link rel="stylesheet" href="http://yui.yahooapis.com/2.7.0/build/reset-fonts-grids/reset-fonts-grids.css" type="text/css">
+   <link rel="stylesheet" href="http://yui.yahooapis.com/2.7.0/build/base/base.css" type="text/css">
+   <style type="text/css">
+   html,body{font-family: georgia,helvetica,arial,sans-serif,georgia;}
+   h1{ font-size:400%; margin:0; padding-bottom:10px; color:#393;}
+   h1 span{color: #111}
+   #ft{position: absolute;bottom: 10px;font-family: helvetica}
+   a{color: #393}
+   </style>
+   <script src="http://www.google.com/jsapi?key=ABQIAAAA1XbMiDxx_BTCY2_FkPh06RRaGTYH6UMl8mADNa0YKuWNNa8VNxQEerTAUcfkyrr6OwBovxn7TDAH5Q"></script>
+   <script type="text/javascript">google.load("mootools", "1.2.4");</script>
+   <script type="text/javascript" src="http://github.com/thinkphp/Request.ForecastWeather/raw/master/demo/Request.JSONP.js"></script>
+   <script type="text/javascript" src="Request.TimeZone-yui-compressed.js"></script>
+   <script type="text/javascript">
+       window.addEvent('domready',function(){
+                 new Request.TimeZone('sydney',{
+                                       onSuccess: function(o){
+                                             if(window.console) {console.log(o);} 
+                                             var resp = o.query.results.response.timezone;
+                                             $('timezonearea2').set('html',"<ul class='tz'>"+
+                                                                    "<li><span>Timezone:</span> "+resp.timezoneId+"</li>"+
+                                                                    "<li><span>Country: </span>"+resp.countryName+"("+resp.countryCode+")</li>"+
+                                                                    "<li><span>Sunset: </span>"+resp.sunset+"</li>"+
+                                                                    "<li><span>Sunrise: </span>"+resp.sunrise+"</li>"+
+                                                                    "<li><span>Latitude: </span>"+resp.lat+"</li>"+
+                                                                    "<li><span>Longitude: </span>"+resp.lng+"</li>"+
+                                                                    "<li><span>Time: </span>"+resp.time+"</li>"+
+                                                                    "</ul>");
+
+                                       },
+                                       onRequest: function(script){           
+                                             if(window.console) {console.log(script);} 
+                                             $('timezonearea2').set('text','Loading...'); 
+                                       }   
+                }).send(); 
+
+
+                 new Request.TimeZone('bucuresti',{
+                                       onSuccess: function(o){
+                                             if(window.console) {console.log(o);} 
+                                             $('timezonearea1').set('html',o.results[0]); 
+
+                                       },
+                                       onRequest: function(script){           
+                                             if(window.console) {console.log(script);} 
+                                             $('timezonearea1').set('text','Loading...'); 
+                                       }   
+                },{badge: true}).send(); 
+
+       });
+    </script>
+
+</head>
+<body>
+<div id="doc" class="yui-t7">
+   <div id="hd" role="banner"><h1>Request.<span>T</span>ime<span>Z</span>one</h1></div>
+   <div id="bd" role="main">
+	<div class="yui-gc">
+    <div class="yui-u first" id="timezonearea1">
+    </div>
+    <div class="yui-u" id="timezonearea2">
+    </div>
+</div>
+</div>
+<div id="ft"><p>Created by @<a href="http://twitter.com/thinkphp">thinkphp</a> using <a href="">Open Data Table</a> | You can grab the source code of this demo on <a href="http://mootools.net/forge/download/Request.TimeZone/v1.0">Forge</a></p></div></div>
+</body>
+</html>
+
