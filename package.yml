@@ -4,4 +4,4 @@ current: v1.0
 category: request
 tags: [jsonp,jsonp-x,request,interface,timezone,time,date,location]
 docs:  
-demo:  
+demo: http://thinkphp.ro/apps/js-hacks/timezone/mootools/demo7.html 
