@@ -1,3 +1,20 @@
+/*
+---
+description: This is a quick plugin MooTools which creates an badge with timezone and map at the location you defined.
+
+authors:
+- Adrian Statescu (http://thinkphp.ro)
+
+license:
+- MIT-style license
+
+requires:
+ core/1.2.1: '*'
+
+provides: [Request.TimeZone]
+...
+*/
+
 Request.TimeZone = new Class({
         Extends: Request.JSONP,
         options: {
