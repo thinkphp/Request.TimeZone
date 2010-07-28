@@ -78,7 +78,7 @@ a Request.TimeZone instance
 #### Arguments
      1. data - (*Object*) data returns are passed.
 
-## Element Method: loadTimeZone
+## Element Method: loadTimeZone {#Element: loadTimeZone}
 
 Updates the content of the Element with the desired timezone.
 
