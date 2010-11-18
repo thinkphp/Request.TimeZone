@@ -64,5 +64,16 @@ In your HTML source:
 
 Dependencies
 
-      MooTools Core 1.2.4
+      MooTools Core 1.3.0
       MooTools More: Request.JSONP
+
+Notes: 
+
+     You can view in action:
+     - [http://thinkphp.ro/apps/js-hacks/Request.TimeZone/demo.html](http://thinkphp.ro/apps/js-hacks/Request.TimeZone/demo.html) 
+     - [http://thinkphp.ro/apps/js-hacks/Request.TimeZone/demo2.html](http://thinkphp.ro/apps/js-hacks/Request.TimeZone/demo2.html) 
+     - [http://thinkphp.ro/apps/js-hacks/Request.TimeZone/demo2.html](http://thinkphp.ro/apps/js-hacks/Request.TimeZone/demo3.html) 
+     - [http://thinkphp.ro/apps/js-hacks/Request.TimeZone/demo3.html](http://thinkphp.ro/apps/js-hacks/Request.TimeZone/demo4.html) 
+     - [http://thinkphp.ro/apps/js-hacks/Request.TimeZone/demo4.html](http://thinkphp.ro/apps/js-hacks/Request.TimeZone/demo5.html)
+     - [http://thinkphp.ro/apps/js-hacks/Request.TimeZone/demo6.html](http://thinkphp.ro/apps/js-hacks/Request.TimeZone/demo6.html) 
+     - [http://thinkphp.ro/apps/js-hacks/Request.TimeZone/demo7.html](http://thinkphp.ro/apps/js-hacks/Request.TimeZone/demo7.html) 
