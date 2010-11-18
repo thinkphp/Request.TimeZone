@@ -69,7 +69,8 @@ Dependencies
 
 Notes: 
 
-     You can view in action:
+You can view in action:
+
      - [http://thinkphp.ro/apps/js-hacks/Request.TimeZone/demo.html](http://thinkphp.ro/apps/js-hacks/Request.TimeZone/demo.html) 
      - [http://thinkphp.ro/apps/js-hacks/Request.TimeZone/demo2.html](http://thinkphp.ro/apps/js-hacks/Request.TimeZone/demo2.html) 
      - [http://thinkphp.ro/apps/js-hacks/Request.TimeZone/demo2.html](http://thinkphp.ro/apps/js-hacks/Request.TimeZone/demo3.html) 
